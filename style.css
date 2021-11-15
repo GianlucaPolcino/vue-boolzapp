@@ -187,8 +187,12 @@ img{
 
 .contacts{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     padding: 8px;
+}
+
+.contacts:hover{
+    background-color: lightgray;
 }
 
 .contacts ul{
