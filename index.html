@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="chat-list">
-                        <div v-for="contact in contacts" class="contacts">
+                        <div v-for="(contact, index) in contacts" class="contacts">
                             <img :src="'img/avatar' + contact.image + '.jpg'" alt="">
                             <ul>
                                 <li>{{contact.name}}</li>
@@ -75,6 +75,7 @@
                         </div>
                     </div>
                     <div class="chat">
+                        
                     </div>
                     <div class="message">
                         <i class="far fa-smile"></i>

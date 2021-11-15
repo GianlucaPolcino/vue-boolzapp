@@ -165,6 +165,7 @@ img{
 .chat{
     height: 460px;
     background-image: url(img/mine.jpg);
+    overflow: auto;
 }
 
 .message{
@@ -182,9 +183,11 @@ img{
 }
 
 .message input{
+    margin: 0 10px;
     height: 30px;
-    width: 600px;
+    width: 700px;
     border: none;
+    border-radius: 8px;
     padding: 0 10px;
 }
 
