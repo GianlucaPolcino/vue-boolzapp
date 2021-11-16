@@ -76,7 +76,7 @@ img{
 }
 
 .top-left-icons .fas{
-    padding-left: 14px;
+    padding-left: 20px;
     font-size: 20px;
     color: gray;
 }
@@ -276,6 +276,18 @@ img{
     font-weight: bold;
 }
 
+.contacts-position{
+    position: relative;
+}
+
+.preview{
+    position: absolute;
+    bottom: 0;
+    left: 76px;
+    font-size: 10px;
+    color: gray;
+    width: 140px;
+}
 
 
 

@@ -20,7 +20,7 @@
                     <div class="top-left">
                         <div class="user">
                             <img src="img/avatar_io.jpg" alt="">
-                            <h4>Nome utente</h4>
+                            <h4>Jane Doe</h4>
                         </div>
                         <div class="top-left-icons">
                             <i class="fas fa-circle-notch"></i>
@@ -47,9 +47,10 @@
 
                     <div class="chat-list">
                         <div v-for="(contact, index) in contacts" @click="showChat(index)" class="contacts" :class="{'active-chat' : index == activeChat}">
-                            <div>
+                            <div class="contacts-position">
                                 <img :src="contact.image" alt="">
                                 <span class="list-name">{{contact.name}}</span>
+                                <span class="preview">{{truncate(contact.messages[0].message)}}</span>
                             </div>
                             <span class="list-data">{{contact.data}}</span>
                         </div>
