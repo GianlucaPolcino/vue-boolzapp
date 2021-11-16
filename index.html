@@ -50,7 +50,7 @@
                             <div class="contacts-position">
                                 <img :src="contact.image" alt="">
                                 <span class="list-name">{{contact.name}}</span>
-                                <span class="preview">{{truncate(contact.messages[0].message)}}</span>
+                                <span class="preview">{{truncate(contact.messages[contact.messages.length -1].message)}}</span>
                             </div>
                             <span class="list-data">{{contact.data}}</span>
                         </div>
