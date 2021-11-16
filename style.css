@@ -84,14 +84,14 @@ img{
 .notification-alert{
     display: flex;
     align-items: center;
-    height: 70px;
+    height: 50px;
     background-color:  #83c7e5;
     padding: 10px;
 }
 
 .notification-alert .fas{
-    font-size: 30px;
-    padding: 18px;
+    font-size: 22px;
+    padding: 12px;
     background-color: white;
     border-radius: 50%;
     vertical-align: middle;
@@ -143,7 +143,7 @@ img{
 }
 
 .chat-list{
-    height: 132%;
+    height: 140%;
     overflow-y: scroll;
 }
 
@@ -282,7 +282,7 @@ img{
 
 .preview{
     position: absolute;
-    bottom: 0;
+    bottom: 8px;
     left: 76px;
     font-size: 10px;
     color: gray;
