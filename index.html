@@ -76,13 +76,9 @@
                         </div>
                     </div>
                     <div class="chat">
-                        <div class="received">
-                            <p>Prova</p>
-                            <span>15/11/2021 20:30</span>
-                        </div>
-                        <div class="sent">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores pariatur, quam accusamus velit nobis quod eum temporibus quaerat, reiciendis eius, numquam minus labore magnam delectus quae commodi autem ipsa ab?</p>
-                            <span>15/11/2021 20:30</span>
+                        <div v-for="message in contacts[activeChat].messages" :class="{'received': message.status == 'received', 'sent' : message.status == 'sent'}">
+                            <p>{{message.message}}</p>
+                            <span>{{message.date}}</span>
                         </div>
                     </div>
                     <div class="message">
