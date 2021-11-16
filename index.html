@@ -46,11 +46,12 @@
                     </div>
 
                     <div class="chat-list">
-                        <div v-for="(contact, index) in contacts" class="contacts">
-                            <img :src="'img/avatar' + contact.image + '.jpg'" alt="">
-                            <ul>
-                                <li>{{contact.name}}</li>
-                            </ul>
+                        <div v-for="(contact, index) in contacts" @click="showChat(index)" class="contacts" :class="{'active-chat' : index == activeChat}">
+                            <div>
+                                <img :src="contact.image" alt="">
+                                <span class="list-name">{{contact.name}}</span>
+                            </div>
+                            <span class="list-data">{{contact.data}}</span>
                         </div>
                     </div>
                 </div>
@@ -58,13 +59,13 @@
                 <div class="main-right">
                     <div class="top-right">
                         <div>
-                            <img src="img/avatar_1.jpg" alt="">
+                            <img :src="contacts[activeChat].image" alt="">
                             <ul>
                                 <li class="font-bold">
-                                    Michele
+                                    {{contacts[activeChat].name}}
                                 </li>
                                 <li class="font-gray">
-                                    Ultimo accesso oggi
+                                    {{contacts[activeChat].data}}
                                 </li>
                             </ul>
                         </div>
@@ -75,7 +76,14 @@
                         </div>
                     </div>
                     <div class="chat">
-                        
+                        <div class="received">
+                            <p>Prova</p>
+                            <span>15/11/2021 20:30</span>
+                        </div>
+                        <div class="sent">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores pariatur, quam accusamus velit nobis quod eum temporibus quaerat, reiciendis eius, numquam minus labore magnam delectus quae commodi autem ipsa ab?</p>
+                            <span>15/11/2021 20:30</span>
+                        </div>
                     </div>
                     <div class="message">
                         <i class="far fa-smile"></i>
