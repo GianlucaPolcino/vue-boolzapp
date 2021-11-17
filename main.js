@@ -191,6 +191,10 @@ const app = new Vue({
             let date = new Date();
             return date.getUTCDate() + '/' + date.getUTCMonth() + '/' + date.getUTCFullYear() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
         },
+
+        toLower(object){
+            return object.name.toLowerCase();
+        }
     },
 
 })

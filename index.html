@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="chat-list">
-                        <div v-for="(contact, index) in contacts" @click="showChat(index)" class="contacts" :class="{'active-chat' : index == activeChat}">
+                        <div v-if="toLower(contact).indexOf(searchContact) > -1" v-for="(contact, index) in contacts" @click="showChat(index)" class="contacts" :class="{'active-chat' : index == activeChat}">
                             <div class="contacts-position">
                                 <img :src="contact.image" alt="">
                                 <span class="list-name">{{contact.name}}</span>
