@@ -144,9 +144,12 @@ const app = new Vue({
             date: '',
             message: '',
             status: 'sent',
-        }
+        },
+
+        searchContact: '',
     },
 
+    
     methods:{
         showChat(index){
             this.activeChat = index;
@@ -161,6 +164,9 @@ const app = new Vue({
         },
 
         pushMessage(user){
+
+            this.newMessage.date = this.getDate(),
+
             this.contacts[user].messages.push(this.newMessage);
             this.newMessage = {
                 date: this.getDate(),

@@ -134,8 +134,6 @@ img{
     border-left: none;
     vertical-align: middle;
     width: 100%;
-    padding-left: 40px;
-    
 }
 
 .search-contact input:focus{
@@ -165,6 +163,10 @@ img{
 .top-right div{
     display: flex;
     align-items: center;
+}
+
+.last-seen{
+    color: gray;
 }
 
 .top-right ul{
@@ -200,6 +202,10 @@ img{
     border: none;
     border-radius: 8px;
     padding: 0 10px;
+}
+
+.message input:focus{
+    outline: none;
 }
 
 .contacts{
