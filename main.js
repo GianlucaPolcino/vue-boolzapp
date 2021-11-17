@@ -139,6 +139,12 @@ const app = new Vue({
         ],
 
         activeChat: 0,
+
+        newMessage: {
+            date: '',
+            message: '',
+            status: 'sent',
+        }
     },
 
     methods:{
@@ -152,7 +158,33 @@ const app = new Vue({
                 string = string.substring(0, 20) + "...";
             }
             return string;
-        }
+        },
+
+        pushMessage(user){
+            this.contacts[user].messages.push(this.newMessage);
+            this.newMessage = {
+                date: this.getDate(),
+                message: '',
+                status: 'sent',
+            };
+
+            setTimeout( () => {
+
+                const response = {
+                   date: this.getDate(),
+                   message: 'Okokok',
+                   status: 'received'
+                };
+    
+                this.contacts[user].messages.push(response);
+    
+             }, 1000);
+        },
+
+        getDate(){
+            let date = new Date();
+            return date.getUTCDate() + '/' + date.getUTCMonth() + '/' + date.getUTCFullYear() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+        },
     },
 
 })
