@@ -35,15 +35,15 @@
                         </div>
                     </div>
                     <div class="notification-alert">
-                            <i class="fas fa-bell-slash"></i>
-                            <ul>
-                                <li class="font-bold">
-                                    Ricevi notifiche di nuovi messaggi
-                                </li>
-                                <li class="font-gray">
-                                    Attiva notifiche
-                                </li>
-                            </ul>
+                        <i class="fas fa-bell-slash"></i>
+                        <ul>
+                            <li class="font-bold">
+                                Ricevi notifiche di nuovi messaggi
+                            </li>
+                            <li class="font-gray">
+                                Attiva notifiche
+                            </li>
+                        </ul>
                     </div>
 
                     <!-- SEARCH INPUT E BLOCCO CONTATTI -->
@@ -88,9 +88,18 @@
 
                     <!-- CHAT -->
                     <div class="chat">
-                        <div v-for="message in contacts[activeChat].messages" :class="{'received': message.status == 'received', 'sent' : message.status == 'sent'}">
+                        <div v-for="(message, index) in contacts[activeChat].messages" :class="{'received': message.status == 'received', 'sent' : message.status == 'sent'}">
+                            <i @click="messageMenu = index, messageOn = !messageOn" class="fas fa-angle-down"></i>
                             <p>{{message.message}}</p>
                             <span>{{message.date}}</span>
+                            <div v-if="messageMenu == index && messageOn == true" class="message-menu">
+                                <div>
+                                    <p>Info messaggio</p>
+                                </div>
+                                <div>
+                                    <p>Cancella messaggio</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="message">

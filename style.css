@@ -249,6 +249,7 @@ img{
 }
 
 .received{
+    position: relative;
     display: flex;
     align-self: flex-start;
     min-width: 100px;
@@ -260,6 +261,7 @@ img{
 }
 
 .sent{
+    position: relative;
     display: flex;
     align-self: flex-end;
     min-width: 100px;
@@ -274,7 +276,7 @@ img{
     align-self: flex-end;
     font-size: 10px;
     color: gray;
-    min-width: 82px;
+    min-width: 106px;
 }
 
 .sent p, .received p{
@@ -293,6 +295,50 @@ img{
     font-size: 10px;
     color: gray;
     width: 140px;
+}
+
+/* BONUS */
+
+.sent i{
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    color: #d4f9ba;
+    transition: 0.3s;
+}
+
+.received i{
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    color: white;
+    transition: 0.3s;
+}
+
+.received:hover i, .sent:hover i{
+    color: gray;
+}
+
+.message-menu{
+    position: absolute;
+    top: 16px;
+    right: 14px;
+    background-color: lightgray;
+    border-radius: 6px;
+    z-index: 99;
+}
+
+.message-menu div{
+    padding: 6px;
+    border-bottom: 1px solid gray;
+}
+
+.message-menu div:last-child{
+    border-bottom: none;
+}
+
+.message-menu div:hover{
+    background-color: gray;
 }
 
 

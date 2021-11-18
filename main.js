@@ -93,7 +93,7 @@ const app = new Vue({
                     },
                     {
                         date: '20/03/2020 16:35:00',
-                        message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        message: 'Si dai, ho appena dato buca a Fabio, si può fare!',
                         status: 'sent'
                     }
                 ],
@@ -116,7 +116,7 @@ const app = new Vue({
                     },
                     {
                         date: '20/03/2020 16:35:00',
-                        message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        message: 'Mi piacerebbe ma non mi sento molto bene.',
                         status: 'sent'
                     }
                 ],
@@ -134,7 +134,7 @@ const app = new Vue({
                 },
                     {
                         date: '10/01/2020 15:50:00',
-                        message: 'Si, ma preferirei andare al cinema',
+                        message: 'Certo che lo so, è la mia...',
                         status: 'received'
                     }
                 ],
@@ -154,6 +154,11 @@ const app = new Vue({
 
         // Elemento interconnesso con l'input di ricerca chat
         searchContact: '',
+
+        // BONUS (menù al click sul messaggio)
+        messageMenu: '',
+        messageOn: false,
+
     },
 
     
@@ -205,7 +210,8 @@ const app = new Vue({
         // Rendo la stinga minuscola in modo da poterla cercare nell'input
         toLower(object){
             return object.name.toLowerCase();
-        }
+        },
+
     },
 
 })
