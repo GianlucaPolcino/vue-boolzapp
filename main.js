@@ -165,11 +165,11 @@ const app = new Vue({
 
         pushMessage(user){
 
-            this.newMessage.date = this.getDate(),
+            this.newMessage.date = dayjs().format('DD/MM/YYYY HH:mm:ss'),
 
             this.contacts[user].messages.push(this.newMessage);
             this.newMessage = {
-                date: this.getDate(),
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                 message: '',
                 status: 'sent',
             };
@@ -177,7 +177,7 @@ const app = new Vue({
             setTimeout( () => {
 
                 const response = {
-                   date: this.getDate(),
+                   date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                    message: 'Okokok',
                    status: 'received'
                 };
@@ -185,11 +185,6 @@ const app = new Vue({
                 this.contacts[user].messages.push(response);
     
              }, 1000);
-        },
-
-        getDate(){
-            let date = new Date();
-            return date.getUTCDate() + '/' + date.getUTCMonth() + '/' + date.getUTCFullYear() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
         },
 
         toLower(object){
