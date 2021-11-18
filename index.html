@@ -13,10 +13,16 @@
 </head>
 <body>
 
+    <!-- Creo l'elemento per interfacciare Vue con il DOM -->
     <div id="app">
+
+        <!-- Creo il container che conterrà il blocco principale e il background -->
         <div class="container">
             <div class="main-app">
+
+                <!-- SEZIONE SINISTRA -->
                 <div class="main-left">
+
                     <div class="top-left">
                         <div class="user">
                             <img src="img/avatar_io.jpg" alt="">
@@ -40,6 +46,7 @@
                             </ul>
                     </div>
 
+                    <!-- SEARCH INPUT E BLOCCO CONTATTI -->
                     <div class="search-contact">
                         <div><i class="fas fa-search"></i></div>
                         <input v-model="searchContact" type="text" name="" id="" placeholder="Cerca o inizia una nuova chat">
@@ -57,7 +64,9 @@
                     </div>
                 </div>
 
+                <!-- SEZIONE DESTRA -->
                 <div class="main-right">
+
                     <div class="top-right">
                         <div>
                             <img :src="contacts[activeChat].image" alt="">
@@ -76,6 +85,8 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
+
+                    <!-- CHAT -->
                     <div class="chat">
                         <div v-for="message in contacts[activeChat].messages" :class="{'received': message.status == 'received', 'sent' : message.status == 'sent'}">
                             <p>{{message.message}}</p>

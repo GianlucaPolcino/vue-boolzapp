@@ -1,8 +1,12 @@
+
+// Dichiaro la Vue app che si interfaccia con il DOM
+
 const app = new Vue({
     el: '#app',
 
     data:{
 
+        // Array di contatti
         contacts:[
             {
                 name: 'Michele',
@@ -137,25 +141,31 @@ const app = new Vue({
                 data: '15/11/2021 20:30',
             },
         ],
-
+        
+        // Elemento che indica la chat selezionata
         activeChat: 0,
 
+        // Nuovo messaggio scritto dall utente che si aggiungerà agli array
         newMessage: {
             date: '',
             message: '',
             status: 'sent',
         },
 
+        // Elemento interconnesso con l'input di ricerca chat
         searchContact: '',
     },
 
     
     methods:{
+
+        // Indico quale sia la chat selezionata al click rendendo la chat attiva corrispondente all'indice selezionato
         showChat(index){
             this.activeChat = index;
             this.contacts.active = true;
         },
 
+        // Tronco la preview del messaggio a 20 lettere massime
         truncate(string){
             if(string.length > 20){
                 string = string.substring(0, 20) + "...";
@@ -163,6 +173,7 @@ const app = new Vue({
             return string;
         },
 
+        // Immetto il nuovo messaggio nell'array corrisponondente alla chat
         pushMessage(user){
 
             if(this.newMessage.message.length > 0){
@@ -175,7 +186,8 @@ const app = new Vue({
                     message: '',
                     status: 'sent',
                 };
-    
+                
+                // Creo la risposta automatica a tre secondi dall'invio del nuovo messaggio
                 setTimeout( () => {
     
                     const response = {
@@ -186,10 +198,11 @@ const app = new Vue({
         
                     this.contacts[user].messages.push(response);
         
-                 }, 1000);
+                 }, 3000);
             }
         },
 
+        // Rendo la stinga minuscola in modo da poterla cercare nell'input
         toLower(object){
             return object.name.toLowerCase();
         }
