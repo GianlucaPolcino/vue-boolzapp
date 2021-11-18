@@ -214,6 +214,7 @@ img{
     justify-content: space-between;
     padding: 8px;
     border-bottom: 1px solid lightgray;
+    cursor: pointer;
 }
 
 .contacts:last-child{
@@ -305,6 +306,7 @@ img{
     right: 10px;
     color: #d4f9ba;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .received i{
@@ -313,6 +315,7 @@ img{
     right: 10px;
     color: white;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .received:hover i, .sent:hover i{
@@ -330,6 +333,7 @@ img{
 .message-menu div{
     padding: 6px;
     border-bottom: 1px solid gray;
+    cursor: pointer;
 }
 
 .message-menu div:last-child{
