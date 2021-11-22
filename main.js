@@ -212,6 +212,11 @@ const app = new Vue({
             return object.name.toLowerCase();
         },
 
+        deleteMsg(index){
+            this.contacts[this.activeChat].messages.splice(index, 1,);
+            
+        },
+
     },
 
 })
